@@ -5,7 +5,7 @@ import Divider from '../components/Divider';
 
 function Hero() {
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-6 py-12 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full max-w-7xl mx-auto px-6 pt-6 pb-12 md:pt-12 md:pb-24 grid md:grid-cols-2 gap-12 items-center">
       {/* Decorative Blob */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#f8d4c9] rounded-full mix-blend-multiply filter blur-[80px] opacity-70 -z-10 translate-x-1/4 -translate-y-1/4"></div>
 
@@ -21,17 +21,17 @@ function Hero() {
         </button>
       </div>
 
-      <div className="relative flex justify-end items-center isolate w-full md:w-[715px]">
+      <div className="relative flex justify-center md:justify-end items-center isolate w-full md:w-[715px] mt-12 md:mt-0">
         {/* Temporary shadow image that you can replace */}
         <img 
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/shadow-red-circles.png" 
           alt="Red Circles Shadows" 
-          className="absolute top-4 right-0 md:top-8 md:-right-4 w-[110%] max-w-md md:max-w-[725px] h-auto object-contain -z-10 pointer-events-none rounded-3xl"
+          className="absolute top-4 right-0 md:top-8 md:-right-4 w-[110%] max-w-none md:max-w-[725px] h-auto object-contain -z-10 pointer-events-none rounded-3xl"
         />
         <img 
-          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/hero-image-people-planting.png" 
-          alt="Volunteers gardening" 
-          className="w-full md:w-[580px] flex-shrink-0 h-auto object-contain relative z-20 translate-x-4 md:translate-x-12"
+          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/group-photo.png" 
+          alt="Group photo of volunteers" 
+          className="w-[95%] md:w-[640px] flex-shrink-0 h-auto object-cover relative z-20 translate-x-0 md:translate-x-4 md:mr-[90px] rounded-3xl shadow-2xl"
         />
       </div>
     </section>
@@ -66,15 +66,15 @@ function HomeAbout() {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative mt-12 md:mt-0">
         <img 
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/overlay-plus-shadow.png" 
           alt="Hands planting seedling" 
-          className="w-full h-[600px] object-cover rounded-3xl rounded-br-[100px]"
+          className="w-full h-[400px] md:h-[600px] object-cover rounded-3xl rounded-br-[100px]"
         />
-        <div className="absolute bottom-6 left-[-2rem] bg-brand-dark text-white p-6 pr-12 rounded-r-2xl shadow-xl">
-          <p className="text-4xl font-extrabold mb-1">10+ Years</p>
-          <p className="text-xs uppercase tracking-widest text-gray-300">Growth & Community</p>
+        <div className="absolute bottom-6 left-0 sm:left-[-2rem] bg-brand-dark text-white p-4 md:p-6 pr-8 md:pr-12 rounded-r-2xl shadow-xl">
+          <p className="text-3xl md:text-4xl font-extrabold mb-1">10+ Years</p>
+          <p className="text-[10px] md:text-xs uppercase tracking-widest text-gray-300">Growth & Community</p>
         </div>
       </div>
     </section>
@@ -145,7 +145,7 @@ function Blog() {
       <div className="grid md:grid-cols-3 gap-8">
         {posts.map((post, idx) => (
           <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-            <img src={post.img} alt={post.title} className="w-full h-48 object-cover" />
+            <img src={post.img} alt={post.title} className="w-full h-[234px] object-cover" />
             <div className="p-8 flex flex-col flex-grow">
               <h3 className="text-xl font-bold text-brand-dark mb-3">{post.title}</h3>
               <p className="text-gray-600 mb-8 flex-grow">{post.excerpt}</p>

@@ -17,22 +17,20 @@ function AboutHero() {
         </button>
       </div>
 
-      <div className="relative h-[600px]">
-        {/* We can use placeholders or find suitable images since the design shows specific photos */}
+      <div className="relative h-[400px] md:h-[600px] w-full mt-8 md:mt-0">
         <img 
-          src="https://picsum.photos/seed/about1/500/600" 
-          alt="Hands planting seedling" 
-          className="absolute top-0 right-0 w-[400px] h-[500px] object-cover rounded-3xl"
+          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/about-header-2.png" 
+          alt="Entrance Photo" 
+          className="absolute top-0 right-0 w-[75%] md:w-[400px] h-auto object-contain rounded-2xl md:rounded-3xl shadow-lg"
         />
         <img 
-          src="https://picsum.photos/seed/about2/500/500" 
-          alt="Volunteers in garden" 
-          className="absolute bottom-0 left-0 w-[300px] h-[300px] object-cover rounded-3xl border-8 border-[#FAF9F6]"
+          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/historical-site.png" 
+          alt="Garden photo with flowerbeds" 
+          className="absolute bottom-0 left-0 w-[75%] md:w-[480px] h-auto md:h-[360px] aspect-[4/3] object-cover rounded-2xl md:rounded-3xl border-4 md:border-8 border-[#FAF9F6] z-10"
         />
         {/* Leaf decoration */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-white">
-          {/* Using an emoji or icon as placeholder for the leaf decoration */}
-          <span className="text-4xl">🍂</span>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-[-12px] ml-[30px] bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-xl shadow-lg border border-white z-20">
+          <span className="text-3xl md:text-4xl">🍂</span>
         </div>
       </div>
     </section>
@@ -43,13 +41,13 @@ function GroundedInHistory() {
   return (
     <section className="bg-[#F8F9F8] w-full py-24 mt-12">
       <div className="w-full max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-        <div className="relative">
+        <div className="relative mb-12 md:mb-0">
           <img 
-            src="https://picsum.photos/seed/about3/600/500" 
+            src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/grounded-history.png" 
             alt="Garden path" 
-            className="w-full h-[500px] object-cover rounded-3xl"
+            className="w-full h-auto aspect-[4/3] object-cover rounded-3xl relative z-0"
           />
-          <div className="absolute bottom-0 right-0 translate-y-1/4 translate-x-1/4 bg-white p-8 rounded-3xl shadow-xl max-w-[280px]">
+          <div className="absolute -bottom-6 left-4 right-4 md:left-auto md:-bottom-0 md:right-0 md:translate-y-1/4 md:translate-x-1/4 bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-xl max-w-none md:max-w-[280px] z-10">
             <h4 className="text-xl font-bold text-brand-dark mb-2">Our Mission</h4>
             <p className="text-gray-600 text-sm leading-relaxed">
               To foster a space where history, nature, and community intertwine, offering a sanctuary for growth and reflection.
@@ -57,7 +55,7 @@ function GroundedInHistory() {
           </div>
         </div>
 
-        <div className="pl-0 md:pl-12">
+        <div className="pl-0 md:pl-12 pt-8 md:pt-0">
           <h2 className="text-4xl md:text-5xl font-black text-brand-dark mb-6 leading-tight">
             Grounded in History,<br />Growing for Tomorrow.
           </h2>
@@ -65,14 +63,14 @@ function GroundedInHistory() {
             A Space 2 Grow is more than just a garden. It is a social ecosystem. We believe that by working the soil together, we don't just grow vegetables&mdash;we grow connections, resilience, and a deeper understanding of our shared heritage at the St Peters campus site.
           </p>
 
-          <div className="flex gap-16 border-t border-gray-200 pt-8">
-            <div>
-              <p className="text-4xl font-black text-brand-dark mb-1">50+</p>
+          <div className="flex flex-col sm:flex-row gap-8 md:gap-16 border-t border-gray-200 pt-8">
+            <div className="text-center sm:text-left">
+              <p className="text-4xl md:text-4xl font-black text-brand-dark mb-1">50+</p>
               <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Active Volunteers</p>
             </div>
-            <div className="w-px bg-gray-300"></div>
-            <div>
-              <p className="text-4xl font-black text-brand-dark mb-1">7th C.</p>
+            <div className="hidden sm:block w-px bg-gray-300"></div>
+            <div className="text-center sm:text-left">
+              <p className="text-4xl md:text-4xl font-black text-brand-dark mb-1">7th C.</p>
               <p className="text-xs font-bold uppercase tracking-widest text-gray-500">Historical Roots</p>
             </div>
           </div>
@@ -85,19 +83,19 @@ function GroundedInHistory() {
 function ThreePillars() {
   const pillars = [
     {
-      img: "https://picsum.photos/seed/kitchengarden/400/300",
-      title: "The Kitchen Garden",
-      text: "Where we cultivate seasonal vegetables and sustainable food sources. A place of labor, reward, and education on growing your own food."
+      img: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/pilar-gardening.png",
+      title: "Gardening",
+      text: "Get your hands dirty and learn about sustainable food sources. From seasonal vegetables to beautiful flowers, our garden is an educational space for cultivation and growth."
     },
     {
-      img: "https://picsum.photos/seed/herbgarden/400/300",
-      title: "The Herb Garden",
-      text: "A sensory explosion of aromas and healing properties. Dedicated to traditional medicinal and culinary herbs used through the centuries."
+      img: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/pilar-community.png",
+      title: "Community",
+      text: "A vibrant, welcoming space where volunteers, students, and locals connect. We believe the strongest roots we put down are the relationships we build by working the soil together."
     },
     {
-      img: "https://picsum.photos/seed/quietgarden/400/300",
-      title: "The Quiet Garden",
-      text: "For reflection and peace. A sanctuary away from urban noise, inviting visitors to sit, breathe, and enjoy the beauty of silence."
+      img: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/pilar-relaxation.png",
+      title: "Relaxation",
+      text: "A peaceful sanctuary away from the urban noise. Specially designed for quiet reflection, inviting visitors to sit, breathe, and enjoy the calming beauty of nature."
     }
   ];
 
@@ -113,9 +111,9 @@ function ThreePillars() {
       <div className="grid md:grid-cols-3 gap-8">
         {pillars.map((pillar, idx) => (
           <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-full border border-gray-100 flex flex-col">
-            <img src={pillar.img} alt={pillar.title} className="w-full h-56 object-cover" />
-            <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">{pillar.title}</h3>
+            <img src={pillar.img} alt={pillar.title} className="w-full h-auto aspect-[4/3] object-cover" />
+            <div className="p-6 md:p-8 flex flex-col flex-grow">
+              <h3 className="text-2xl font-bold text-brand-dark mb-2 md:mb-4">{pillar.title}</h3>
               <p className="text-gray-600 leading-relaxed text-sm flex-grow">{pillar.text}</p>
             </div>
           </div>
@@ -154,7 +152,7 @@ function FAQ() {
       answer: (
         <div>
           <p className="mb-6">Next to St Peters church, opposite the University of Sunderland's St Peters campus. This is a very special site as it's history goes back to the 7th century when Benedict Biscop set up a monastery here.</p>
-          <img src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/st-peters.png" alt="Monastery aerial" className="w-full h-48 object-cover rounded-xl" />
+          <img src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/st-peters.png" alt="Monastery aerial" className="w-full h-64 object-cover object-[center_80%] rounded-xl" />
         </div>
       )
     }
