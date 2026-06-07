@@ -1,13 +1,17 @@
 import React from 'react';
-import { Flower2 } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="bg-brand-dark text-white pt-20 pb-8 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-16">
         <div className="md:col-span-1">
-          <h3 className="text-2xl font-extrabold mb-4 flex items-center gap-2">
-            <Flower2 className="w-6 h-6 text-brand-accent" /> Space 2 Grow
+          <h3 className="text-2xl font-extrabold mb-4 flex items-center gap-3">
+            <img 
+              src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/logo.png" 
+              alt="A Space 2 Grow Logo" 
+              className="w-12 h-auto object-contain brightness-0 invert"
+            />
+            A Space 2 Grow
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed">
             A volunteer-led community garden where staff, students, and local residents come together to grow, learn, and connect.
@@ -42,7 +46,7 @@ export default function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 text-center md:text-left text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} Space 2 Grow. All rights reserved.
+        &copy; {new Date().getFullYear()} A Space 2 Grow. All rights reserved.
       </div>
     </footer>
   );
