@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 function AboutHero() {
   return (
@@ -12,9 +14,9 @@ function AboutHero() {
         <p className="text-gray-700 mb-10 leading-relaxed text-lg max-w-md">
           At the historic Monkwearmouth Monastery site, a group of dedicated volunteers has transformed the earth into A Space 2 Grow&mdash;a community haven of quiet beauty near the heart of Sunderland.
         </p>
-        <button className="bg-[#1A2F24] hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-full transition-all text-md flex items-center gap-2">
+        <Link to="/get-involved" className="bg-[#1A2F24] hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-full transition-all text-md inline-flex items-center gap-2 max-w-max">
           Visit The Garden <ArrowRight className="w-4 h-4" />
-        </button>
+        </Link>
       </div>
 
       <div className="relative h-[400px] md:h-[600px] w-full mt-8 md:mt-0">
@@ -22,11 +24,15 @@ function AboutHero() {
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/about-header-2.png" 
           alt="Entrance Photo" 
           className="absolute top-0 right-0 w-[75%] md:w-[400px] h-auto object-contain rounded-2xl md:rounded-3xl shadow-lg"
+          referrerPolicy="no-referrer"
+          fetchPriority="high"
         />
         <img 
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/historical-site.png" 
           alt="Garden photo with flowerbeds" 
           className="absolute bottom-0 left-0 w-[75%] md:w-[480px] h-auto md:h-[360px] aspect-[4/3] object-cover rounded-2xl md:rounded-3xl border-4 md:border-8 border-[#FAF9F6] z-10"
+          referrerPolicy="no-referrer"
+          fetchPriority="high"
         />
         {/* Leaf decoration */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-[-12px] ml-[30px] bg-white/90 backdrop-blur-sm p-3 md:p-4 rounded-xl shadow-lg border border-white z-20">
@@ -46,6 +52,8 @@ function GroundedInHistory() {
             src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/grounded-history.png" 
             alt="Garden path" 
             className="w-full h-auto aspect-[4/3] object-cover rounded-3xl relative z-0"
+            referrerPolicy="no-referrer"
+            loading="lazy"
           />
           <div className="absolute -bottom-6 left-4 right-4 md:left-auto md:-bottom-0 md:right-0 md:translate-y-1/4 md:translate-x-1/4 bg-white p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-xl max-w-none md:max-w-[280px] z-10">
             <h4 className="text-xl font-bold text-brand-dark mb-2">Our Mission</h4>
@@ -111,7 +119,7 @@ function ThreePillars() {
       <div className="grid md:grid-cols-3 gap-8">
         {pillars.map((pillar, idx) => (
           <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all h-full border border-gray-100 flex flex-col">
-            <img src={pillar.img} alt={pillar.title} className="w-full h-auto aspect-[4/3] object-cover" />
+            <img src={pillar.img} alt={pillar.title} className="w-full h-auto aspect-[4/3] object-cover" referrerPolicy="no-referrer" loading="lazy" />
             <div className="p-6 md:p-8 flex flex-col flex-grow">
               <h3 className="text-2xl font-bold text-brand-dark mb-2 md:mb-4">{pillar.title}</h3>
               <p className="text-gray-600 leading-relaxed text-sm flex-grow">{pillar.text}</p>
@@ -152,7 +160,7 @@ function FAQ() {
       answer: (
         <div>
           <p className="mb-6">Next to St Peters church, opposite the University of Sunderland's St Peters campus. This is a very special site as it's history goes back to the 7th century when Benedict Biscop set up a monastery here.</p>
-          <img src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/st-peters.png" alt="Monastery aerial" className="w-full h-64 object-cover object-[center_80%] rounded-xl" />
+          <img src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/about-us/st-peters.png" alt="Monastery aerial" className="w-full h-64 object-cover object-[center_80%] rounded-xl" referrerPolicy="no-referrer" loading="lazy" />
         </div>
       )
     }
@@ -206,12 +214,12 @@ function CTASection() {
             We are always looking for new friends, skills, and stories. Join us next weekend for our open volunteer session.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#1A2F24] hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-full transition-all text-sm border border-[#1A2F24]">
+            <Link to="/get-involved" className="bg-[#1A2F24] hover:bg-opacity-90 text-white font-semibold py-3 px-8 rounded-full transition-all text-sm border border-[#1A2F24] inline-block">
               Join the Volunteers
-            </button>
-            <button className="bg-white hover:bg-gray-50 text-brand-dark font-semibold py-3 px-8 rounded-full transition-all text-sm border border-gray-300 shadow-sm">
+            </Link>
+            <a href="https://www.facebook.com/ASpace2GrowSunderland/" target="_blank" rel="noopener noreferrer" className="bg-white hover:bg-gray-50 text-brand-dark font-semibold py-3 px-8 rounded-full transition-all text-sm border border-gray-300 shadow-sm inline-block">
               Follow on Facebook
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -222,6 +230,10 @@ function CTASection() {
 export default function About() {
   return (
     <>
+      <SEO 
+        title="About Us - A Space to Grow" 
+        description="Learn about A Space to Grow, our history, our mission, and the community of volunteers cultivating our garden in Sunderland." 
+      />
       <AboutHero />
       <GroundedInHistory />
       <ThreePillars />
