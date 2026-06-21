@@ -10,6 +10,8 @@ export default function Footer() {
               src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/logo.png" 
               alt="A Space 2 Grow Logo" 
               className="w-12 h-auto object-contain brightness-0 invert"
+              referrerPolicy="no-referrer"
+              loading="lazy"
             />
             A Space 2 Grow
           </h3>
@@ -19,28 +21,29 @@ export default function Footer() {
         </div>
         
         <div>
-          <h4 className="font-bold mb-6 text-brand-accent">Explore</h4>
+          <h4 className="font-bold mb-6 text-brand-accent">Quick Links</h4>
           <ul className="space-y-4 text-sm text-gray-300">
-            <li><a href="#" className="hover:text-white transition-colors">Featured Causes</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Success Stories</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Impact Report</a></li>
+            <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="/blog" className="hover:text-white transition-colors">Stories & News</a></li>
+            <li><a href="/get-involved" className="hover:text-white transition-colors">Get Involved</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 className="font-bold mb-6 text-brand-accent">Community</h4>
+          <h4 className="font-bold mb-6 text-brand-accent">Stay Connected</h4>
           <ul className="space-y-4 text-sm text-gray-300">
-            <li><a href="#" className="hover:text-white transition-colors">Partner with Us</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Newsletter Signup</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
+            <li><a href="mailto:as2g.sunderland@gmail.com" className="hover:text-white transition-colors">Email: as2g.sunderland@gmail.com</a></li>
+            <li><a href="https://facebook.com/aspace2grow" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Facebook: @aspace2grow</a></li>
+            <li><a href="https://linkedin.com/company/a-space-2-grow" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn: A Space 2 Grow</a></li>
           </ul>
         </div>
         
         <div>
-          <h4 className="font-bold mb-6 text-brand-accent">Legal</h4>
+          <h4 className="font-bold mb-6 text-brand-accent">Location</h4>
           <ul className="space-y-4 text-sm text-gray-300">
-            <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+            <li>Next to St Peters church</li>
+            <li>St Peter's Way</li>
+            <li>Sunderland. SR6 0DY</li>
           </ul>
         </div>
       </div>

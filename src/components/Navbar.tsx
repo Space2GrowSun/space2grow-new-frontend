@@ -16,6 +16,8 @@ export default function Navbar() {
               src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/logo.png" 
               alt="Space 2 Grow Logo" 
               className="w-[90px] md:w-[108px] h-auto object-contain"
+              referrerPolicy="no-referrer"
+              fetchPriority="high"
             />
           </Link>
         </div>
@@ -29,9 +31,9 @@ export default function Navbar() {
         </div>
         
         <div className="hidden md:block">
-          <button className="bg-[#CDB4DB] hover:bg-opacity-90 text-brand-dark font-semibold py-2 px-6 rounded-full transition-all">
+          <Link to="/get-involved" className="bg-[#CDB4DB] hover:bg-opacity-90 text-brand-dark font-semibold py-2 px-6 rounded-full transition-all inline-block">
             Volunteer
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -50,9 +52,9 @@ export default function Navbar() {
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className={`text-lg ${isActive('/about') ? 'font-bold text-brand-dark' : 'text-gray-600'}`}>AboutUs</Link>
           <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className={`text-lg ${isActive('/blog') ? 'font-bold text-brand-dark' : 'text-gray-600'}`}>Blog</Link>
           <Link to="/get-involved" onClick={() => setIsMobileMenuOpen(false)} className={`text-lg ${isActive('/get-involved') ? 'font-bold text-brand-dark' : 'text-gray-600'}`}>Get Involved</Link>
-          <button className="bg-[#CDB4DB] text-brand-dark font-semibold py-3 px-6 rounded-full w-full text-center mt-2">
+          <Link to="/get-involved" onClick={() => setIsMobileMenuOpen(false)} className="bg-[#CDB4DB] text-brand-dark font-semibold py-3 px-6 rounded-full w-full text-center mt-2 inline-block">
             Volunteer
-          </button>
+          </Link>
         </div>
       )}
     </nav>

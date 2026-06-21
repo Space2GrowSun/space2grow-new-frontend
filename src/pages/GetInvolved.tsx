@@ -1,15 +1,22 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Navigation } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function GetInvolved() {
   return (
     <div className="w-full bg-[#fbfbfb]">
+      <SEO 
+        title="Get Involved - A Space to Grow" 
+        description="Join our community garden in Monkwearmouth. Find out how to volunteer, donate, and participate." 
+      />
       {/* Hero Section */}
       <section className="relative w-full h-[400px] mb-16">
         <img 
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/hero-section-tomatoes.png" 
           alt="Tomato plants" 
           className="absolute inset-0 w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-brand-dark/40"></div>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -29,22 +36,21 @@ export default function GetInvolved() {
             </div>
             <h3 className="text-xl font-bold text-brand-dark mb-4">Location</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Monkwearmouth Site<br />
-              Opposite University Campus<br />
-              Sunderland, SR6 0AA
+              Next to St Peters church<br />
+              St Peter's Way<br />
+              Sunderland. SR6 0DY
             </p>
           </div>
 
-          {/* Phone */}
+          {/* Connect */}
           <div className="bg-[#f4f4f4] p-10 flex flex-col items-center text-center border border-gray-200">
             <div className="w-16 h-16 bg-[#b2f0e8] rounded-full flex items-center justify-center mb-6">
               <Phone className="text-[#2b6b60]" size={32} />
             </div>
-            <h3 className="text-xl font-bold text-brand-dark mb-4">Phone</h3>
+            <h3 className="text-xl font-bold text-brand-dark mb-4">Social</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              General Inquiries<br />
-              +44 (0) 191 555 0123<br />
-              Mon-Fri, 9am - 5pm
+              Facebook: @aspace2grow<br />
+              LinkedIn: A Space 2 Grow
             </p>
           </div>
 
@@ -55,84 +61,29 @@ export default function GetInvolved() {
             </div>
             <h3 className="text-xl font-bold text-brand-dark mb-4">Email</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              hello@verdantgrowth.org<br />
-              volunteer@verdantgrowth.org<br />
+              as2g.sunderland@gmail.com<br />
+              sustainability@sunderland.ac.uk<br />
               Response within 24h
             </p>
           </div>
         </div>
 
-        {/* Contact Form */}
-        <div className="bg-white p-10 md:p-16 border border-gray-200 rounded-sm mb-24 max-w-4xl mx-auto shadow-sm">
-          <h2 className="text-4xl font-bold text-brand-dark mb-4">Send a Message</h2>
-          <p className="text-gray-600 text-sm mb-10">
-            Fill out the form below and our team will get back to you within 24 business hours.
+        {/* Contact Us Directly */}
+        <div className="bg-white p-10 md:p-16 border border-gray-200 rounded-sm mb-24 max-w-4xl mx-auto shadow-sm text-center flex flex-col items-center relative overflow-hidden">
+          <div className="w-20 h-20 bg-[#b2f0e8] rounded-full flex items-center justify-center mb-8 relative z-10">
+            <Mail className="text-[#356b60]" size={40} />
+          </div>
+          <h2 className="text-4xl font-bold text-brand-dark mb-6 relative z-10">Get in Touch</h2>
+          <p className="text-gray-600 text-lg mb-10 max-w-2xl relative z-10">
+            Whether you'd like to partner with Space 2 Grow, volunteer, donate, or get involved in any way, we would love to hear from you. Please email us directly and we'll get back to you as soon as possible.
           </p>
-
-          <form className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-semibold text-brand-dark mb-2">First Name</label>
-                <input 
-                  type="text" 
-                  placeholder="Enter your first name" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:border-[#2b6b60] focus:ring-1 focus:ring-[#2b6b60] bg-white"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-brand-dark mb-2">Last Name</label>
-                <input 
-                  type="text" 
-                  placeholder="Enter your last name" 
-                  className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:border-[#2b6b60] focus:ring-1 focus:ring-[#2b6b60] bg-white"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-brand-dark mb-2">Email Address</label>
-              <input 
-                type="email" 
-                placeholder="name@example.com" 
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:border-[#2b6b60] focus:ring-1 focus:ring-[#2b6b60] bg-white"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-brand-dark mb-2">Subject</label>
-              <div className="relative">
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:border-[#2b6b60] focus:ring-1 focus:ring-[#2b6b60] appearance-none bg-white text-gray-700">
-                  <option>General Inquiry</option>
-                  <option>Volunteering</option>
-                  <option>Donations</option>
-                  <option>Partnerships</option>
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-brand-dark mb-2">Message</label>
-              <textarea 
-                placeholder="How can we help you?" 
-                rows={6}
-                className="w-full px-4 py-3 border border-gray-300 rounded-sm focus:outline-none focus:border-[#2b6b60] focus:ring-1 focus:ring-[#2b6b60] bg-white resize-y"
-              ></textarea>
-            </div>
-
-            <div>
-              <button 
-                type="button" 
-                className="bg-[#356b60] hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-sm transition-all"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
+          <a 
+            href="mailto:as2g.sunderland@gmail.com"
+            className="bg-[#356b60] hover:bg-opacity-90 text-white font-medium py-3 px-8 rounded-sm transition-all inline-flex items-center gap-2 relative z-10"
+          >
+            <Mail size={18} />
+            Send us an Email
+          </a>
         </div>
 
         {/* Find Us Section */}
@@ -141,27 +92,29 @@ export default function GetInvolved() {
             <h2 className="text-4xl font-bold text-brand-dark mb-2">Find Us</h2>
             <p className="text-gray-600 text-sm">Visit our main hub and community greenhouse.</p>
           </div>
-          <button className="flex items-center gap-2 border border-[#356b60] text-[#356b60] hover:bg-[#356b60] hover:text-white font-medium py-2.5 px-6 rounded-sm transition-all self-start md:self-auto">
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=54.9134968696855,-1.3740604984662772" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 border border-[#356b60] text-[#356b60] hover:bg-[#356b60] hover:text-white font-medium py-2.5 px-6 rounded-sm transition-all self-start md:self-auto"
+          >
             <Navigation size={18} />
             Get Directions
-          </button>
+          </a>
         </div>
 
-        {/* Map Placeholder Image */}
+        {/* Interactive Map via iframe */}
         <div className="w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden relative shadow-md">
-          <img 
-            src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop" 
-            alt="Map showing location" 
-            className="w-full h-full object-cover"
-          />
-          {/* Stylized map pin overlay */}
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 -translate-x-1/2 drop-shadow-2xl">
-            <div className="w-16 h-16 bg-[#356b60] rounded-full rounded-br-sm rotate-45 flex items-center justify-center border-4 border-white">
-              <div className="-rotate-45">
-                 <img src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/logo.png" alt="Logo pin" className="w-8 h-8 object-contain brightness-0 invert" />
-              </div>
-            </div>
-          </div>
+          <iframe 
+            src="https://maps.google.com/maps?q=54.9134968696855,-1.3740604984662772+(A%20Space%202%20Grow)&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Google Maps Location"
+          ></iframe>
         </div>
 
       </div>

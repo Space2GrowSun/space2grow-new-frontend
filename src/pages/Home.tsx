@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sprout, TreePine, Bug, Flower2, ArrowRight, ArrowLeft, Leaf, BookOpen, Megaphone, Hammer } from 'lucide-react';
+import { Sprout, TreePine, Bug, Flower2, ArrowRight, ArrowLeft, Leaf, BookOpen, Megaphone, Hammer, Users, Briefcase } from 'lucide-react';
 import Divider from '../components/Divider';
+import SEO from '../components/SEO';
+import { allPosts } from '../data/posts';
 
 function Hero() {
   return (
@@ -16,9 +19,9 @@ function Hero() {
         <p className="text-lg text-gray-700 mb-8 leading-relaxed">
           A Space 2 Grow is a volunteer-led community garden beside St Peter's Church in Monkwearmouth where staff, students, and local residents come together to grow, learn, and connect.
         </p>
-        <button className="bg-brand-purple hover:bg-opacity-90 text-brand-dark font-semibold py-3 px-8 rounded-full transition-all text-lg">
+        <Link to="/get-involved" className="bg-brand-purple hover:bg-opacity-90 text-brand-dark font-semibold py-3 px-8 rounded-full transition-all text-lg inline-block">
           Volunteer
-        </button>
+        </Link>
       </div>
 
       <div className="relative flex justify-center md:justify-end items-center isolate w-full md:w-[715px] mt-12 md:mt-0">
@@ -27,11 +30,15 @@ function Hero() {
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/shadow-red-circles.png" 
           alt="Red Circles Shadows" 
           className="absolute top-4 right-0 md:top-8 md:-right-4 w-[110%] max-w-none md:max-w-[725px] h-auto object-contain -z-10 pointer-events-none rounded-3xl"
+          referrerPolicy="no-referrer"
+          fetchPriority="high"
         />
         <img 
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/group-photo.png" 
           alt="Group photo of volunteers" 
           className="w-[95%] md:w-[640px] flex-shrink-0 h-auto object-cover relative z-20 translate-x-0 md:translate-x-4 md:mr-[90px] rounded-3xl shadow-2xl"
+          referrerPolicy="no-referrer"
+          fetchPriority="high"
         />
       </div>
     </section>
@@ -71,6 +78,8 @@ function HomeAbout() {
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/overlay-plus-shadow.png" 
           alt="Hands planting seedling" 
           className="w-full h-[400px] md:h-[600px] object-cover rounded-3xl rounded-br-[100px]"
+          referrerPolicy="no-referrer"
+          loading="lazy"
         />
         <div className="absolute bottom-6 left-0 sm:left-[-2rem] bg-brand-dark text-white p-4 md:p-6 pr-8 md:pr-12 rounded-r-2xl shadow-xl">
           <p className="text-3xl md:text-4xl font-extrabold mb-1">10+ Years</p>
@@ -84,51 +93,34 @@ function HomeAbout() {
 function FeatureCards() {
   return (
     <section className="w-full max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8">
-      <div className="bg-[#F4F5F4] p-12 rounded-3xl relative overflow-hidden group hover:shadow-lg transition-all cursor-pointer">
-        <h3 className="text-3xl font-extrabold text-brand-dark mb-4">What We Have</h3>
-        <p className="text-gray-700 mb-8 max-w-sm text-lg">
-          From biodiverse habitats to workshop spaces, explore the facilities that make our garden unique.
+      <Link to="/get-involved" className="bg-[#F4F5F4] p-12 rounded-3xl relative overflow-hidden group hover:shadow-lg transition-all block">
+        <h3 className="text-3xl font-extrabold text-brand-dark mb-4">Volunteer With Us</h3>
+        <p className="text-gray-700 mb-8 max-w-sm text-lg relative z-10">
+          Join our regular sessions to learn new gardening skills, meet the community, and help us maintain our green oasis.
         </p>
-        <div className="flex items-center gap-2 font-bold text-brand-dark">
-          View Facilities <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <div className="flex items-center gap-2 font-bold text-brand-dark relative z-10">
+          Get Involved <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </div>
-        <Sprout className="absolute -bottom-8 -right-8 w-48 h-48 text-[#E8EAE8] opacity-50" strokeWidth={1} />
-      </div>
+        <Users className="absolute -bottom-8 -right-8 w-48 h-48 text-[#E8EAE8] opacity-50 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
+      </Link>
 
-      <div className="bg-[#E3C9B6] p-12 rounded-3xl relative overflow-hidden group hover:shadow-lg transition-all cursor-pointer">
-        <h3 className="text-3xl font-extrabold text-brand-dark mb-4">What You Can Do</h3>
-        <p className="text-gray-800 mb-8 max-w-sm text-lg">
-          Whether you're looking to volunteer, learn a new skill, or simply find peace, there's a place for you.
+      <Link to="/get-involved" className="bg-[#E3C9B6] p-12 rounded-3xl relative overflow-hidden group hover:shadow-lg transition-all block">
+        <h3 className="text-3xl font-extrabold text-brand-dark mb-4">Corporate Partners</h3>
+        <p className="text-gray-800 mb-8 max-w-sm text-lg relative z-10">
+          Looking for a meaningful team-building day? Partner with us to make a lasting impact on our community garden.
         </p>
-        <div className="flex items-center gap-2 font-bold text-brand-dark">
-          Our Activities <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <div className="flex items-center gap-2 font-bold text-brand-dark relative z-10">
+          Learn More <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </div>
-        <div className="absolute -bottom-12 -right-12 text-[#D2B5A0] opacity-50 font-extrabold text-[200px] leading-none select-none">
-          ?
-        </div>
-      </div>
+        <Briefcase className="absolute -bottom-4 -right-12 text-[#D2B5A0] w-56 h-56 opacity-40 group-hover:scale-110 transition-transform duration-500" strokeWidth={1} />
+      </Link>
     </section>
   );
 }
 
 function Blog() {
-  const posts = [
-    {
-      img: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/tree-story-blog.png",
-      title: "How to plant a fruit tree",
-      excerpt: "Planting a fruit tree in your location should not be so complicated"
-    },
-    {
-      img: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/voluteers-story.png",
-      title: "Volunteers Revive Garden",
-      excerpt: "How our dedicated team brought the quiet reflection area back to life."
-    },
-    {
-      img: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/paint-dog-story.png",
-      title: "Painting a Bench with Molly",
-      excerpt: "The friendliest four legged member of the garden Molly helps painting a bench.."
-    }
-  ];
+  // Get the 3 most recent posts to show on the homepage
+  const recentPosts = allPosts.slice(0, 3);
 
   return (
     <section className="w-full max-w-7xl mx-auto px-6 py-16">
@@ -137,23 +129,25 @@ function Blog() {
           <p className="text-sm font-bold tracking-widest text-brand-dark uppercase mb-2 text-[#4A785A]">Our Blog</p>
           <h2 className="text-3xl md:text-4xl font-extrabold text-brand-dark">Check out our recent stories...</h2>
         </div>
-        <a href="#" className="flex items-center gap-2 font-bold text-brand-dark hover:underline mt-4 md:mt-0">
+        <Link to="/blog" className="flex items-center gap-2 font-bold text-brand-dark hover:underline mt-4 md:mt-0">
           View all <ArrowRight className="w-5 h-5" />
-        </a>
+        </Link>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {posts.map((post, idx) => (
-          <div key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full">
-            <img src={post.img} alt={post.title} className="w-full h-[234px] object-cover" />
-            <div className="p-8 flex flex-col flex-grow">
-              <h3 className="text-xl font-bold text-brand-dark mb-3">{post.title}</h3>
-              <p className="text-gray-600 mb-8 flex-grow">{post.excerpt}</p>
-              <button className="w-full bg-brand-dark text-white py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors">
-                See More &gt;&gt;
-              </button>
+        {recentPosts.map((post, idx) => (
+          <Link to={`/blog/${post.slug}`} key={idx} className="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow flex flex-col h-full group">
+            <div className="overflow-hidden">
+              <img src={post.image} alt={post.title} className="w-full h-[234px] object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
             </div>
-          </div>
+            <div className="p-8 flex flex-col flex-grow">
+              <h3 className="text-xl font-bold text-brand-dark mb-3 group-hover:text-brand-accent transition-colors">{post.title}</h3>
+              <p className="text-gray-600 mb-8 flex-grow">{post.excerpt}</p>
+              <div className="w-full bg-brand-dark text-white py-3 rounded-full font-semibold group-hover:bg-opacity-90 transition-colors text-center">
+                See More &gt;&gt;
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </section>
@@ -259,6 +253,7 @@ function Gallery() {
                 exit={{ opacity: 0, scale: 0.8, x: -500 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="absolute w-[250px] h-[300px] object-cover rounded-2xl hidden md:block"
+                referrerPolicy="no-referrer"
               />
 
               {/* Current Image */}
@@ -270,6 +265,7 @@ function Gallery() {
                 exit={{ opacity: 0, scale: 0.9, zIndex: 10 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="absolute w-full max-w-[600px] h-[400px] object-cover rounded-2xl shadow-2xl"
+                referrerPolicy="no-referrer"
               />
 
               {/* Next Image */}
@@ -281,6 +277,7 @@ function Gallery() {
                 exit={{ opacity: 0, scale: 0.8, x: 500 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 className="absolute w-[250px] h-[300px] object-cover rounded-2xl hidden md:block"
+                referrerPolicy="no-referrer"
               />
             </AnimatePresence>
           </div>
@@ -318,6 +315,8 @@ function Gallery() {
                   ? "border-2 border-brand-accent opacity-100" 
                   : "opacity-40 hover:opacity-100"
               }`} 
+              referrerPolicy="no-referrer"
+              loading="lazy"
             />
           ))}
         </div>
@@ -366,6 +365,8 @@ function FindUs() {
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/aerial-photo-trees.png" 
           alt="Aerial view of forest" 
           className="w-full h-full object-cover rounded-3xl"
+          referrerPolicy="no-referrer"
+          loading="lazy"
         />
       </div>
     </section>
@@ -383,9 +384,9 @@ function CTA() {
           <h2 className="text-4xl md:text-6xl font-extrabold mb-10 leading-tight">
             A Space 2 Grow is more than a garden—it's a movement.
           </h2>
-          <button className="bg-brand-accent hover:bg-[#b0d453] text-brand-dark font-bold py-4 px-10 rounded-full transition-all text-lg shadow-lg">
+          <Link to="/get-involved" className="bg-brand-accent hover:bg-[#b0d453] text-brand-dark font-bold py-4 px-10 rounded-full transition-all text-lg shadow-lg inline-block">
             Get Involved Today
-          </button>
+          </Link>
         </div>
       </div>
     </section>
@@ -395,6 +396,10 @@ function CTA() {
 export default function Home() {
   return (
     <>
+      <SEO 
+        title="A Space to Grow - Home" 
+        description="A Space 2 Grow is a volunteer-led community garden beside St Peter's Church in Monkwearmouth." 
+      />
       <Hero />
       <Divider />
       <HomeAbout />
