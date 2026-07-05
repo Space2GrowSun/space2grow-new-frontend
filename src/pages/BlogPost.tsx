@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar } from 'lucide-react';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import ReactPlayer from 'react-player';
 import { allPosts } from '../data/posts';
 import SEO from '../components/SEO';
 
@@ -96,10 +98,33 @@ export default function BlogPost() {
           <div className="prose prose-lg prose-green max-w-none 
                         prose-headings:text-brand-dark prose-headings:font-bold 
                         prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-8
-                        prose-a:text-[#356b60] hover:prose-a:text-[#2b6b60]
+                        prose-a:text-[#356b60] hover:prose-a:text-[#2b6b60] prose-a:underline
                         prose-strong:text-brand-dark
                         markdown-body">
-            <Markdown>{post.content.replace(/\n\s*\n/g, '\n\n')}</Markdown>
+            <Markdown 
+              remarkPlugins={[remarkGfm]}
+              components={{
+                a: ({node, ...props}) => {
+                  const url = props.href;
+                  if (url && ReactPlayer.canPlay(url)) {
+                    return (
+                      <span className="my-8 aspect-video w-full rounded-xl overflow-hidden shadow-lg relative bg-black not-prose block">
+                        <ReactPlayer
+                          src={url}
+                          width="100%"
+                          height="100%"
+                          style={{ position: 'absolute', top: 0, left: 0 }}
+                          controls
+                        />
+                      </span>
+                    );
+                  }
+                  return <a {...props} target="_blank" rel="noopener noreferrer" />
+                }
+              }}
+            >
+              {post.content.replace(/\n\s*\n/g, '\n\n')}
+            </Markdown>
           </div>
           
           {/* Article Footer */}

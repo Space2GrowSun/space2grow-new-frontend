@@ -1,8 +1,5 @@
 {
   "name": "A Space to Grow",
   "description": "A volunteer-led community garden hub and network.",
-  "requestFramePermissions": ["geolocation"],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
+  "requestFramePermissions": ["geolocation"]
 }
