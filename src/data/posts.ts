@@ -23,7 +23,7 @@ export const allPosts: Post[] = [
     category: "EVENTS",
     date: "July 2025",
     excerpt: "Over 50 people gathered on Friday 27th June to celebrate a decade of community, creativity, and cultivation at A Space 2 Grow Community Garden.",
-    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/group-photo.png",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/a-decade-of-growth.png",
     author: {
       name: "Laura Kerry",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
@@ -62,7 +62,7 @@ Laura said in her closing speech:
     category: "ENVIRONMENT",
     date: "July 2025",
     excerpt: "On Wednesday 4th June 2025, volunteers, students, and staff from the University of Sunderland, alongside members of the Durham Wildlife Trust, came together for a vibrant and engaging BioBlitz.",
-    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/bio-blitz-growing-plant.png",
     author: {
       name: "Laura Kerry",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
@@ -88,7 +88,7 @@ A Space 2 Grow is supported by a group of dedicated trustees and volunteers, and
     category: "COMMUNITY",
     date: "June 2025",
     excerpt: "In October 2024, the University of Sunderland began actively supporting A Space 2 Grow... Now, as we approach its 10-year anniversary, the garden is enjoying a new lease of life.",
-    image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/renewal-community.png",
     author: {
       name: "Laura Kerry",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
@@ -113,7 +113,7 @@ Whether you’re interested in hands-on gardening, arts and wellbeing activities
     category: "COMMUNITY",
     date: "February 2025",
     excerpt: "Staff and students at the University of Sunderland have been dedicating their free time to revitalise a community garden located just a stone’s throw from St Peter’s Campus.",
-    image: "https://images.unsplash.com/photo-1592305555268-d06e23293e50?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/university-of-sunderland.png",
     author: {
       name: "Laura Kerry",
       avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop"
@@ -142,7 +142,7 @@ The next clean-up session is scheduled for this Wednesday from 3:30pm to 5:00pm,
     category: "EVENTS",
     date: "July 2024",
     excerpt: "Just to say thank you to every one that attended todays BBQ and those who helped make the day a huge success.",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/bbq-blog.png",
     author: {
       name: "Rob Hunt",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
@@ -159,7 +159,7 @@ There are so many to thank including Barbara from Bedes Bistro, Tracy and Steve 
     category: "NEWS",
     date: "April 2024",
     excerpt: "With Spring comes the new growing season and jobs to do. It was great to see a few folk at a Space 2 Grow today helping clearing, weeding, potting on and planting.",
-    image: "https://images.unsplash.com/photo-1416879598555-ea78a483e0e4?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/spring-is-here-blog.png",
     author: {
       name: "Rob Hunt",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
@@ -174,7 +174,7 @@ If you fancy coming along to join in the fun and learn a bit about gardening or 
     category: "EVENTS",
     date: "August 2014",
     excerpt: "On the 9th August cyclists, walkers and our mascot Biscop Bear set off for our first fund raising challenge. Through rain, wind and shine, not to mention hurricane Bertha our team completed the route.",
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/cycle-challenge.png",
     author: {
       name: "Rob Hunt",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
@@ -191,7 +191,7 @@ Enjoy this video of a few highlights of this years challenge: https://youtu.be/Y
     category: "COMMUNITY",
     date: "May 2014",
     excerpt: "A Space 2 Grow has always looked to work in partnership and so today talks started with Gentoo housing association. They are exploring ways to build healthy communities in Sunderland.",
-    image: "https://images.unsplash.com/photo-1530836369250-ef71a35979fd?q=80&w=800&auto=format&fit=crop",
+    image: "https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/blog/garden-plan.jpg",
     author: {
       name: "Rob H",
       avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"

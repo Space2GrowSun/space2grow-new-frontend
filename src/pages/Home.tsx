@@ -25,7 +25,6 @@ function Hero() {
       </div>
 
       <div className="relative flex justify-center md:justify-end items-center isolate w-full md:w-[715px] mt-12 md:mt-0">
-        {/* Temporary shadow image that you can replace */}
         <img 
           src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/shadow-red-circles.png" 
           alt="Red Circles Shadows" 
@@ -54,7 +53,7 @@ function HomeAbout() {
           A volunteer-led sanctuary in Sunderland
         </h2>
         <p className="text-gray-700 mb-10 leading-relaxed text-lg">
-          Nestled in the heart of Monkwearmouth, A Space 2 Grow has transformed from a neglected plot into a thriving urban oasis. Since 2014, our community has worked hand-in-hand to nurture a space that offers more than just plants—it offers a sense of belonging.
+          Nestled in the heart of Monkwearmouth, A Space 2 Grow has transformed from a neglected plot into a thriving urban oasis. Since 2015, our community has worked hand-in-hand to nurture a space that offers more than just plants—it offers a sense of belonging.
         </p>
         
         <div className="grid grid-cols-2 gap-y-6 gap-x-4">
@@ -75,7 +74,7 @@ function HomeAbout() {
 
       <div className="relative mt-12 md:mt-0">
         <img 
-          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/overlay-plus-shadow.png" 
+          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/home-page_overlay-plus-shadow.png" 
           alt="Hands planting seedling" 
           className="w-full h-[400px] md:h-[600px] object-cover rounded-3xl rounded-br-[100px]"
           referrerPolicy="no-referrer"
@@ -346,7 +345,7 @@ function FindUs() {
         
         <div className="mb-8">
           <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark mb-2">Address</h4>
-          <p className="text-gray-700">Church St, Monkwearmouth<br />Sunderland, SR6 0DY</p>
+          <p className="text-gray-700">St Peter’s Way, Monkwearmouth<br />Sunderland, SR6 0DY</p>
         </div>
         
         <div className="mb-8">
@@ -362,7 +361,7 @@ function FindUs() {
       
       <div className="h-full min-h-[400px]">
         <img 
-          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/aerial-photo-trees.png" 
+          src="https://pub-1dc16f247cd64361ba6cb13a5f547dbc.r2.dev/home-page/street-view-image.png" 
           alt="Aerial view of forest" 
           className="w-full h-full object-cover rounded-3xl"
           referrerPolicy="no-referrer"
