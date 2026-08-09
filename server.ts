@@ -7,7 +7,7 @@ dotenv.config();
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  let PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
 
@@ -41,9 +41,22 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-  });
+  const listen = (port: number) => {
+    const server = app.listen(port, "0.0.0.0", () => {
+      console.log(`\n  🚀 Space2Grow app running on http://localhost:${port}\n`);
+    });
+
+    server.on("error", (err: any) => {
+      if (err.code === "EADDRINUSE") {
+        console.warn(`Port ${port} is in use, trying http://localhost:${port + 1}...`);
+        listen(port + 1);
+      } else {
+        console.error("Server error:", err);
+      }
+    });
+  };
+
+  listen(PORT);
 }
 
 startServer();

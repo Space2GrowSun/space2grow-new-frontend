@@ -1,0 +1,742 @@
+/* ============================================================
+   Creator Dashboard — isolated styles (no site nav/footer)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ── Reset / base ─────────────────────────────────────────── */
+.db-root {
+  --db-bg: #ffffff;
+  --db-sidebar-bg: #f9f9f9;
+  --db-sidebar-border: #e8e8e8;
+  --db-text: #1a1a1a;
+  --db-muted: #888;
+  --db-accent: #1a8917;       /* Medium green */
+  --db-accent-hover: #156d12;
+  --db-danger: #c0392b;
+  --db-draft: #f39c12;
+  --db-published: #1a8917;
+  --db-border: #e0e0e0;
+  --db-radius: 6px;
+  --db-font: 'Inter', system-ui, sans-serif;
+  --db-serif: 'Lora', Georgia, serif;
+  --db-shadow: 0 1px 4px rgba(0,0,0,.08);
+  --db-shadow-lg: 0 4px 24px rgba(0,0,0,.12);
+
+  font-family: var(--db-font);
+  background: var(--db-bg);
+  color: var(--db-text);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Layout shell ─────────────────────────────────────────── */
+.db-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────── */
+.db-sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--db-sidebar-bg);
+  border-right: 1px solid var(--db-sidebar-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.db-sidebar-header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--db-sidebar-border);
+}
+
+.db-brand {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--db-text);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.db-brand-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--db-accent);
+}
+
+.db-new-btn {
+  width: 100%;
+  background: var(--db-accent);
+  color: white;
+  border: none;
+  padding: 9px 14px;
+  border-radius: var(--db-radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s;
+  font-family: var(--db-font);
+}
+
+.db-new-btn:hover { background: var(--db-accent-hover); }
+
+.db-post-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.db-post-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.db-post-item:hover { background: #f0f0f0; }
+
+.db-post-item.active {
+  background: #eeeeee;
+  border-left-color: var(--db-accent);
+}
+
+.db-post-item-title {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--db-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.db-post-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: var(--db-muted);
+}
+
+.db-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.db-status-dot.published { background: var(--db-published); }
+.db-status-dot.draft     { background: var(--db-draft); }
+
+/* ── Main content area ───────────────────────────────────── */
+.db-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Top bar ─────────────────────────────────────────────── */
+.db-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 32px;
+  border-bottom: 1px solid var(--db-border);
+  background: var(--db-bg);
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.db-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.db-back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--db-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-family: var(--db-font);
+  padding: 4px 0;
+  transition: color 0.12s;
+}
+
+.db-back-btn:hover { color: var(--db-text); }
+
+.db-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.db-btn {
+  border: 1px solid var(--db-border);
+  background: var(--db-bg);
+  color: var(--db-text);
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: var(--db-font);
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.db-btn:hover { background: #f5f5f5; }
+
+.db-btn-publish {
+  background: var(--db-text);
+  color: white;
+  border-color: var(--db-text);
+}
+
+.db-btn-publish:hover { background: #333; border-color: #333; }
+.db-btn-publish:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.db-btn-danger {
+  color: var(--db-danger);
+  border-color: transparent;
+  background: none;
+}
+
+.db-btn-danger:hover { background: #fdf2f2; border-color: #fae0e0; }
+
+.db-save-status {
+  font-size: 12.5px;
+  color: var(--db-muted);
+}
+
+/* ── Editor + panel layout ───────────────────────────────── */
+.db-editor-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ── Writing canvas ─────────────────────────────────────── */
+.db-canvas {
+  flex: 1;
+  overflow-y: auto;
+  padding: 48px 64px;
+}
+
+@media (max-width: 900px) {
+  .db-canvas { padding: 32px 24px; }
+}
+
+.db-title-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-family: var(--db-serif);
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--db-text);
+  resize: none;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 8px;
+  caret-color: var(--db-text);
+}
+
+.db-title-input::placeholder { color: #ccc; }
+
+.db-title-input::-webkit-scrollbar { display: none; }
+
+/* ── Cover image area ───────────────────────────────────── */
+.db-cover-area {
+  margin-bottom: 24px;
+}
+
+.db-cover-img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--db-radius);
+  display: block;
+}
+
+.db-cover-upload {
+  border: 2px dashed var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.db-cover-upload:hover {
+  border-color: var(--db-accent);
+  background: #f6fdf6;
+}
+
+.db-cover-upload input { display: none; }
+
+.db-cover-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: var(--db-muted);
+  font-size: 13.5px;
+}
+
+.db-cover-upload-icon {
+  color: #ccc;
+}
+
+.db-cover-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.db-cover-replace-btn {
+  font-size: 12px;
+  color: var(--db-muted);
+  background: none;
+  border: 1px solid var(--db-border);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--db-font);
+  transition: color 0.12s;
+}
+
+.db-cover-replace-btn:hover { color: var(--db-text); }
+
+/* ── TipTap body editor ─────────────────────────────────── */
+.db-editor-wrap {
+  min-height: 400px;
+}
+
+.db-editor-wrap .ProseMirror {
+  outline: none;
+  font-family: var(--db-serif);
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--db-text);
+  min-height: 400px;
+}
+
+.db-editor-wrap .ProseMirror p { margin: 0 0 1.1em; }
+
+.db-editor-wrap .ProseMirror h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 1.6em 0 0.4em;
+  line-height: 1.3;
+}
+
+.db-editor-wrap .ProseMirror h3 {
+  font-size: 21px;
+  font-weight: 600;
+  margin: 1.4em 0 0.3em;
+  line-height: 1.3;
+}
+
+.db-editor-wrap .ProseMirror blockquote {
+  border-left: 3px solid var(--db-text);
+  margin: 1.2em 0;
+  padding-left: 20px;
+  color: var(--db-muted);
+  font-style: italic;
+}
+
+.db-editor-wrap .ProseMirror ul,
+.db-editor-wrap .ProseMirror ol {
+  padding-left: 24px;
+  margin: 0.6em 0 1em;
+}
+
+.db-editor-wrap .ProseMirror li { margin-bottom: 0.3em; }
+
+.db-editor-wrap .ProseMirror a {
+  color: var(--db-accent);
+  text-decoration: underline;
+}
+
+.db-editor-wrap .ProseMirror img {
+  max-width: 100%;
+  border-radius: var(--db-radius);
+  margin: 1em 0;
+}
+
+.db-editor-wrap .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  color: #ccc;
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+/* ── Bubble menu ────────────────────────────────────────── */
+.db-bubble-menu {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  border-radius: 6px;
+  padding: 4px 6px;
+  gap: 2px;
+  box-shadow: var(--db-shadow-lg);
+}
+
+.db-bubble-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.75);
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--db-font);
+  transition: color 0.1s, background 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.db-bubble-btn:hover { color: white; background: rgba(255,255,255,.1); }
+.db-bubble-btn.active { color: white; background: rgba(255,255,255,.15); }
+
+.db-bubble-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,.15);
+  margin: 0 2px;
+}
+
+/* ── Link input in bubble ───────────────────────────────── */
+.db-link-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 2px 2px 8px;
+}
+
+.db-link-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+  font-family: var(--db-font);
+  width: 200px;
+}
+
+.db-link-input::placeholder { color: rgba(255,255,255,.4); }
+
+/* ── Publishing panel ───────────────────────────────────── */
+.db-panel {
+  width: 280px;
+  min-width: 280px;
+  border-left: 1px solid var(--db-border);
+  overflow-y: auto;
+  padding: 28px 24px;
+  background: var(--db-bg);
+}
+
+.db-panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--db-muted);
+  margin-bottom: 20px;
+}
+
+.db-field {
+  margin-bottom: 20px;
+}
+
+.db-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--db-text);
+  margin-bottom: 6px;
+}
+
+.db-label-hint {
+  font-size: 11.5px;
+  color: var(--db-muted);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.db-select,
+.db-input,
+.db-textarea {
+  width: 100%;
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 8px 10px;
+  font-size: 13.5px;
+  font-family: var(--db-font);
+  color: var(--db-text);
+  background: var(--db-bg);
+  outline: none;
+  transition: border-color 0.12s;
+  box-sizing: border-box;
+}
+
+.db-select:focus,
+.db-input:focus,
+.db-textarea:focus { border-color: var(--db-accent); }
+
+.db-textarea { resize: vertical; min-height: 70px; }
+
+.db-slug-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.db-slug-generate {
+  background: none;
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 7px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--db-muted);
+  white-space: nowrap;
+  font-family: var(--db-font);
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.db-slug-generate:hover { color: var(--db-text); border-color: #aaa; }
+
+/* ── Tags input ─────────────────────────────────────────── */
+.db-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 6px 8px;
+  min-height: 38px;
+  cursor: text;
+  transition: border-color 0.12s;
+}
+
+.db-tags-wrap:focus-within { border-color: var(--db-accent); }
+
+.db-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 2px 6px 2px 8px;
+  font-size: 12px;
+  color: var(--db-text);
+}
+
+.db-tag-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--db-muted);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1;
+  transition: color 0.1s;
+}
+
+.db-tag-remove:hover { color: var(--db-danger); }
+
+.db-tag-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-family: var(--db-font);
+  flex: 1;
+  min-width: 80px;
+  background: transparent;
+}
+
+/* ── Divider ────────────────────────────────────────────── */
+.db-divider {
+  height: 1px;
+  background: var(--db-border);
+  margin: 16px 0;
+}
+
+/* ── Empty state ────────────────────────────────────────── */
+.db-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--db-muted);
+  gap: 12px;
+  font-size: 15px;
+}
+
+.db-empty-icon { color: #ddd; }
+
+/* ── Loading / error states ─────────────────────────────── */
+.db-loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--db-muted);
+  font-size: 14px;
+}
+
+.db-config-error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  text-align: center;
+}
+
+.db-config-error h2 { font-size: 18px; font-weight: 600; margin: 0; }
+.db-config-error p  { font-size: 14px; color: var(--db-muted); margin: 0; max-width: 400px; }
+.db-config-error code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12.5px;
+}
+
+/* ── Image upload inside editor ─────────────────────────── */
+.db-inline-img-btn {
+  background: none;
+  border: 1px solid var(--db-border);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--db-muted);
+  transition: color 0.12s, border-color 0.12s;
+}
+
+.db-inline-img-btn:hover { color: var(--db-accent); border-color: var(--db-accent); }
+
+/* ── Scrollbar styling ──────────────────────────────────── */
+.db-sidebar ::-webkit-scrollbar,
+.db-canvas ::-webkit-scrollbar,
+.db-panel ::-webkit-scrollbar { width: 5px; }
+
+.db-sidebar ::-webkit-scrollbar-thumb,
+.db-canvas ::-webkit-scrollbar-thumb,
+.db-panel ::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* ── Auth gate ──────────────────────────────────────────── */
+.db-auth-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--db-sidebar-bg);
+}
+
+.db-auth-card {
+  background: var(--db-bg);
+  border: 1px solid var(--db-border);
+  border-radius: 12px;
+  padding: 40px 36px;
+  width: 360px;
+  box-shadow: var(--db-shadow-lg);
+}
+
+.db-auth-logo {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.db-auth-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.db-auth-subtitle {
+  font-size: 14px;
+  color: var(--db-muted);
+  margin: 0 0 24px;
+}
+
+.db-auth-error {
+  font-size: 13px;
+  color: var(--db-danger);
+  margin-bottom: 12px;
+}
+
+/* ── Notifications ──────────────────────────────────────── */
+.db-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  z-index: 9999;
+  pointer-events: none;
+  animation: db-toast-in 0.2s ease;
+}
+
+@keyframes db-toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.db-alt-input {
+  border: 1px solid var(--db-border);
+  border-radius: var(--db-radius);
+  padding: 5px 8px;
+  font-size: 12.5px;
+  font-family: var(--db-font);
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  margin-top: 6px;
+  transition: border-color 0.12s;
+}
+
+.db-alt-input:focus { border-color: var(--db-accent); }
